@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+@import "tailwindcss";
+
+/* Tell Tailwind v4 where to scan for class usage */
+@source "./**/*.{ts,tsx}";
+
+/* Force-include status utilities that use dynamic class names in JSX */
+@source inline("status-active status-recovered status-critical status-under-observation");
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', 'Inter', sans-serif;
+
+  /* Primary Blue - trust & healthcare */
+  --color-primary-50: #EBF3FE;
+  --color-primary-100: #D6E7FD;
+  --color-primary-200: #ADCFFb;
+  --color-primary-300: #85B6F9;
+  --color-primary-400: #5C9EF7;
+  --color-primary-500: #2F80ED;
+  --color-primary-600: #1266D4;
+  --color-primary-700: #0E4EA3;
+  --color-primary-800: #093571;
+  --color-primary-900: #051D40;
+
+  /* Secondary Green - wellness & positivity */
+  --color-secondary-50: #E9F7EF;
+  --color-secondary-100: #D4F0DF;
+  --color-secondary-200: #A8E0BF;
+  --color-secondary-300: #7DD19F;
+  --color-secondary-400: #52C17F;
+  --color-secondary-500: #27AE60;
+  --color-secondary-600: #1F8B4D;
+  --color-secondary-700: #17683A;
+  --color-secondary-800: #104526;
+  --color-secondary-900: #082313;
+
+  /* Neutral / Gray */
+  --color-surface-50: #F7F9FC;
+  --color-surface-100: #EEF2F7;
+  --color-surface-200: #E2E8F0;
+  --color-surface-300: #CBD5E1;
+  --color-surface-400: #94A3B8;
+  --color-surface-500: #64748B;
+  --color-surface-600: #475569;
+  --color-surface-700: #334155;
+  --color-surface-800: #1E293B;
+  --color-surface-900: #0F172A;
+
+  /* Accent Purple - highlights */
+  --color-accent-50: #F3EEFA;
+  --color-accent-100: #E7DCF5;
+  --color-accent-200: #CFB9EB;
+  --color-accent-300: #B797E0;
+  --color-accent-400: #9F74D6;
+  --color-accent-500: #8B5CF6;
+  --color-accent-600: #6D3DD0;
+  --color-accent-700: #5230A0;
+  --color-accent-800: #372070;
+  --color-accent-900: #1C1040;
+
+  /* Warning Orange - alerts */
+  --color-warning-50: #FFF7ED;
+  --color-warning-100: #FFEDD5;
+  --color-warning-200: #FED7AA;
+  --color-warning-300: #FDBA74;
+  --color-warning-400: #FB923C;
+  --color-warning-500: #F97316;
+  --color-warning-600: #EA580C;
+  --color-warning-700: #C2410C;
+  --color-warning-800: #9A3412;
+  --color-warning-900: #7C2D12;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background: #F8FAFC;
+    color: #334155;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+}
+
+@utility status-active {
+  background-color: rgb(39 174 96 / 0.08);
+  color: #1F8B4D;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@utility status-recovered {
+  background-color: rgb(47 128 237 / 0.08);
+  color: #1266D4;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@utility status-critical {
+  background-color: rgb(239 68 68 / 0.08);
+  color: #DC2626;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@utility status-under-observation {
+  background-color: rgb(249 115 22 / 0.08);
+  color: #EA580C;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
