@@ -6,10 +6,6 @@ const conditions = ['Hypertension', 'Diabetes Type 2', 'Asthma', 'Migraine', 'Ar
 const statuses: Patient['status'][] = ['Active', 'Recovered', 'Critical', 'Under Observation'];
 const doctors = ['Dr. Anderson', 'Dr. Patel', 'Dr. Kim', 'Dr. Thompson', 'Dr. Chen', 'Dr. Roberts'];
 
-function randomFrom<T>(arr: T[]): T {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
 function generateAvatar(name: string): string {
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random&size=128`;
 }
